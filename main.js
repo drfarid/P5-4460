@@ -65,33 +65,19 @@ d3.csv("candy.csv", function(csv) {
 //find the abbreviation of the passed in state, if country == usa, or province if country == canada
 function findAbbreviation(country, fullName) {
 	
+	var returnValue = null;
 
 	if (country == "USA") {
 		d3.csv("usStatesAndAbbreviations.csv", function(csv) {
-			getUsAbbreviation(fullName, csv);
-		});
-	} else {
-		d3.csv("canadaProvincesAndAbbreviations.csv", function(csv) {
-			getCanAbbreviation(fullName, csv);
+			var usAbbr = csv.filter(function(d) {
+				if (d.full == fullName) {
+					returnValue = d.abbreviation;
+				}
+			});
+
 		});
 	}
+	
 	console.log("return value: " + returnValue);
-}
-
-function getUsAbbreviation(fullName, csv) {
-	var ret = csv.filter(function(d) {
-		if (fullName = d.full) {
-			returnValue = d.abbreviation;
-			return;
-		}
-	});
-}
-
-function getCanAbbreviation(fullName, csv) {
-	var ret = csv.filter(function(d) {
-		if (fullName = d.fullname) {
-			returnValue = d.abbreviation;
-			return;
-		}
-	});
+	return returnValue;
 }
