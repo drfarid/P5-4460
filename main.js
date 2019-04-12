@@ -19,20 +19,25 @@ d3.csv("candy.csv", function(csv) {
 	    		//if the state value is longer than two characters, find the abbreviation
 	    		if (d.Q5_STATE.length > 2) {
 	    			var usAbbreviation = findAbbreviation("USA", d.Q5_STATE);
-	    			if (usAbbreviation != null) {
-	    				d.Q5_STATE = usAbbreviation;	
-	    			}
+	    			setTimeout(function() {
+						usAbbreviation = returnValue;
+						if (usAbbreviation != null) {
+		    				d.Q5_STATE = returnValue;	
+		    			}
+					},2000);	
 	    		}
 
 	    	//the country is canada
 	    	} else if (d.Q4_COUNTRY == "Canada") {
-	    		//if the province value is longer than two characters, find the abbreviation
+	    		//if the state value is longer than two characters, find the abbreviation
 	    		if (d.Q5_STATE.length > 2) {
-	    			var canAbbreviation = findAbbreviation("CANADA", d.Q5_STATE);
-	    			if (canAbbreviation != null) {
-	 					d.Q5_STATE = canAbbreviation;	    				
-	    			}
-
+	    			var usAbbreviation = findAbbreviation("USA", d.Q5_STATE);
+	    			setTimeout(function() {
+						usAbbreviation = returnValue;
+						if (usAbbreviation != null) {
+		    				d.Q5_STATE = returnValue;	
+		    			}
+					},2000);	
 	    		}
 	    	//the country is not the United States or Canada
 	    	//do not use this entry
@@ -60,9 +65,8 @@ function findAbbreviation(country, fullName) {
 	}
 
 	setTimeout(function(){
-		console.log("return Value: " + returnValue);
-	},2000);
-	return returnValue;
+		return returnValue;
+	},200);
 }
 
 function getUsAbbreviation(fullName, csv) {
