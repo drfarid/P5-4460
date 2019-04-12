@@ -1,20 +1,3 @@
-var width =500;
-var height= 500;
-
-var color = "black";
-
-var brush;
-var brush2;
-var xScale;
-var yScale;
-var xScale2;
-var yScale2;
-
-var selected;
-
-var returnValue = null;
-
-
 
 d3.csv("candy.csv", function(csv) {
     
@@ -29,25 +12,25 @@ d3.csv("candy.csv", function(csv) {
     var updatedAbbr = csv.map(function(d) {
 
     	//check to see the entry has a value
-	    if (d.Q5_STATE_PROVINCE != null) { 
+	    if (d.Q5_STATE != null) { 
 	  		
 	  		//the country is the united States
 	    	if (d.Q4_COUNTRY == "United States") {
 	    		//if the state value is longer than two characters, find the abbreviation
-	    		if (d.Q5_STATE_PROVINCE.length > 2) {
-	    			var usAbbreviation = findAbbreviation("USA", d.Q5_STATE_PROVINCE);
+	    		if (d.Q5_STATE.length > 2) {
+	    			var usAbbreviation = findAbbreviation("USA", d.Q5_STATE);
 	    			if (usAbbreviation != null) {
-	    				d.Q5_STATE_PROVINCE = usAbbreviation;	
+	    				d.Q5_STATE = usAbbreviation;	
 	    			}
 	    		}
 
 	    	//the country is canada
 	    	} else if (d.Q4_COUNTRY == "Canada") {
 	    		//if the province value is longer than two characters, find the abbreviation
-	    		if (d.Q5_STATE_PROVINCE.length > 2) {
-	    			var canAbbreviation = findAbbreviation("CANADA", d.Q5_STATE_PROVINCE);
+	    		if (d.Q5_STATE.length > 2) {
+	    			var canAbbreviation = findAbbreviation("CANADA", d.Q5_STATE);
 	    			if (canAbbreviation != null) {
-	 					d.Q5_STATE_PROVINCE = canAbbreviation;	    				
+	 					d.Q5_STATE = canAbbreviation;	    				
 	    			}
 
 	    		}
@@ -61,23 +44,43 @@ d3.csv("candy.csv", function(csv) {
     //============================Thomas==================================
 });
 
-
+var returnValue = null;
 //find the abbreviation of the passed in state, if country == usa, or province if country == canada
 function findAbbreviation(country, fullName) {
 	
-	var returnValue = null;
 
 	if (country == "USA") {
 		d3.csv("usStatesAndAbbreviations.csv", function(csv) {
-			var usAbbr = csv.filter(function(d) {
-				if (d.full == fullName) {
-					returnValue = d.abbreviation;
-				}
-			});
-
+			getUsAbbreviation(fullName, csv);
+		});
+	} else {
+		d3.csv("canadaProvincesAndAbbreviations.csv", function(csv) {
+			getCanAbbreviation(fullName, csv);
 		});
 	}
-	
-	console.log("return value: " + returnValue);
+
+	setTimeout(function(){
+		console.log("return Value: " + returnValue);
+	},2000);
 	return returnValue;
+}
+
+function getUsAbbreviation(fullName, csv) {
+	var ret = csv.filter(function(d) {
+		if (fullName == d.full) {
+			// console.log("joy and peace: " + d.abbreviation);
+			returnValue = d.abbreviation;
+			return;
+		}
+	});
+}
+
+function getCanAbbreviation(fullName, csv) {
+	var ret = csv.filter(function(d) {
+		if (fullName == d.fullname) {
+			// console.log("joy and peace: " + d.abbreviation);
+			returnValue = d.abbreviation;
+			return;
+		}
+	});
 }
