@@ -12,6 +12,8 @@ var yScale2;
 
 var selected;
 
+var returnValue = null;
+
 
 
 d3.csv("candy.csv", function(csv) {
@@ -62,33 +64,34 @@ d3.csv("candy.csv", function(csv) {
 
 //find the abbreviation of the passed in state, if country == usa, or province if country == canada
 function findAbbreviation(country, fullName) {
-	var returnValue = null;
+	
 
 	if (country == "USA") {
 		d3.csv("usStatesAndAbbreviations.csv", function(csv) {
-			var usAbbr = text.filter(function(d) {
-				if (d.full = fullName) {
-					returnValue = d.abbreviation;
-				}
-			});
-
+			getUsAbbreviation(fullName, csv);
+		});
+	} else {
+		d3.csv("canadaProvincesAndAbbreviations.csv", function(csv) {
+			getCanAbbreviation(fullName, csv);
 		});
 	}
-	
-	// console.log("return value: " + returnValue);
-	return returnValue;
+	console.log("return value: " + returnValue);
+}
 
-	// } else if (country == "CANADA") {
-	// 	d3.text("canadaProvincesAndAbbreviations.csv", function(text) {
-	// 		var data = d3.csvParseRows(text).filter(function(d) {
-	// 			if (d.fullname == fullName) {
-	// 				returnValue =  d.abbreviation;
-	// 				return d.abbreviation;
-	// 			}
-	// 		});
-	// 		// console.log(data);
-	// 	});
-	// }  
-	// console.log("return value: " + returnValue);
-	
+function getUsAbbreviation(fullName, csv) {
+	var ret = csv.filter(function(d) {
+		if (fullName = d.full) {
+			returnValue = d.abbreviation;
+			return;
+		}
+	});
+}
+
+function getCanAbbreviation(fullName, csv) {
+	var ret = csv.filter(function(d) {
+		if (fullName = d.fullname) {
+			returnValue = d.abbreviation;
+			return;
+		}
+	});
 }
