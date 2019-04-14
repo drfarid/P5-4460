@@ -97,7 +97,7 @@ d3.csv("candy.csv", function(csv) {
    		})
    		.on("click", function(d,i){
    			candyName = compData[i][2];
-   			(document.getElementById("pCandyName").innerHTML = "______________Heatmap of Popularity for: " + candyName + "_______________"); 
+   			(document.getElementById("pCandy").innerHTML = "What States love " + candyName + " the most?"); 
    			if (candyName != null) {
    				createMap(candyName);
 			   }

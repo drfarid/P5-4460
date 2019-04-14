@@ -10,28 +10,48 @@
 		
 
    	</head>
-	   <h1 align="center" style="">Candies and Who Likes Them</h1>   
-	   <body align="center"style="margin: 120px;">
-		These two visualizations are designed to provide a glimpse into the intricate relationships between age, state of residence, and the preference for different candies.<br>
-		The data comes from reviews sent in through online surveys. Participants enter their name, the state they live in and their choice of 'DESPAIR', 'MEH', or, 'JOY' for a wide array of different candies. 
-   		
+   		<body>
+		   <h1 align="center">Candies and Who Likes Them</h1>   
+		   <p align="center"style="margin: 120px; font-size: 15px">
+			These two visualizations are designed to provide a glimpse into the intricate relationships between age, state of residence, and the preference for different candies. <br>
+			The data comes from reviews sent in through online surveys. Participants enter their age, the state they live in and their choice of 'DESPAIR', 'MEH', or, 'JOY' for a wide array of different candies. 
+	   		</p>
+	   		
+			
+
+			<div id="scatter" style="width:500px; height:500px; float:left">
+				<h2 style="margin-left:100px">What age likes what candy?</h2>
+				<div align="right">
+						<strong>Candy Name:</strong> <span id="candy"></span><br/>
+						<strong>Total Joys:</strong> <span id="rating"></span><br/>
+						<strong>Average Age:</strong> <span id="age"></span><br/>
+					</div>
+			</div>
+
+			<div style="width:200px;height:200px; float:left"></div>
+			<h2 id="pCandy" style="margin-left:50px">Click a candy on the right to see its popularity</h2>
+			<div id="regions_div" style="width:700px; height:500px; float:left"></div>
 
 
-	   	<div id="wrapper">
-	   		<h3 id="pCandyName">Where are [choose a candy] most popular?</h3>
-			<div id="regions_div" style="width: 500px; height: 500px;"></div>
+	  <!--  	<div id="wrapper">
+
 			<h3 id="scatterplot">What age prefers what candy?</h3>
 			<div id="scatter" style="width: 500px; height: 500px;">
-			</div>
-			<div>
+				<h3 id="pCandyName">What states love [choose a candy] the most?</h3>
+				<div id="regions_div" style="width: 500px; height: 500px;"></div>
+				<div>
 					<strong>Candy Name:</strong> <span id="candy"></span><br/>
 					<strong>Total Joys:</strong> <span id="rating"></span><br/>
 					<strong>Average Age:</strong> <span id="age"></span><br/>
+				</div>
 			</div>
 
+
 			
-		</div>
-		
+
+			
+		</div> -->
+		</body>
 	   	
-	</body>
+	
 </html>
