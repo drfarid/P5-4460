@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
+	
 	<head>
 		<meta charset="UTF-8"/>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<link href="style.css" type="text/css" rel="stylesheet" />
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
-
+		
 
    	</head>
-   	<body>
+	   <h1>Candies and Who Likes Them</h1>   
+	   <body>
+		Bellow are two visualizations that display candy and who likes the different kinds. The first is a heatmap that adds up the total popularity of a selected candy for each individual state. The popularity is then put into a range from 0.0 to 1.0, where 0.0 is no one liked it and 1.0 is everyone enjoyed it. The second is a scatter plot that shows the total 'joy' values and the average age of who enjoys that candy. To use the map, you need to select a candy from the scatter plot below. Hovering over the points on the scatter plot will display their individual information to the right of the scatter plot.
    		<p id="pCandyName">______________Heatmap of Popularity for: [click a candy below to display its popularity]_______________</p>
 		<div id="regions_div" style="width: 900px; height: 500px;"></div>
 	   	<div id="wrapper">
-
+			<p id="pCandyName">______________Candies based on Average Age and Total Joys_______________</p>
 			<div id="scatter" style="width: 500px; height: 500px;">
 			</div>
 			<div>
 					<strong>Candy Name:</strong> <span id="candy"></span><br/>
-					<strong>People who like it:</strong> <span id="rating"></span><br/>
+					<strong>Total Joys:</strong> <span id="rating"></span><br/>
 					<strong>Average Age:</strong> <span id="age"></span><br/>
 			</div>
 

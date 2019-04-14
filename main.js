@@ -56,7 +56,7 @@ d3.csv("candy.csv", function(csv) {
 	var yAxis = d3.axisLeft().scale(yScale);
 	
 		//   //Create SVGs for charts
-	var chart1 = d3.select("#scatter")
+	var chart = d3.select("#scatter")
         .append("svg:svg")
         .attr("width",width)
 		.attr("height",height);
@@ -68,7 +68,7 @@ d3.csv("candy.csv", function(csv) {
 	var candyName = null;
 
 	//create the points in the scatterplot
- 	var temp1= chart1.selectAll("circle")
+ 	var temp1= chart.selectAll("circle")
    		.data(compData)
    		.enter()
    		.append("circle")
@@ -84,10 +84,13 @@ d3.csv("candy.csv", function(csv) {
 			candyName = compData[i][2];
 			(document.getElementById("rating").innerHTML = compData[i][0]);
 			(document.getElementById("age").innerHTML = compData[i][1]/compData[i][0]);
-			selected = d;
-			chart1.selectAll("circle").attr("fill", function(thisGuy) {
+			// selected = d;
+			chart.selectAll("circle").attr("fill", function(thisGuy) {
 				if (thisGuy == selected) {
-					return "red";
+					return "green";
+				}
+				if (thisGuy == d) {
+					return "red"
 				}
 				return "black";
 			});
@@ -97,7 +100,14 @@ d3.csv("candy.csv", function(csv) {
    			(document.getElementById("pCandyName").innerHTML = "______________Heatmap of Popularity for: " + candyName + "_______________"); 
    			if (candyName != null) {
    				createMap(candyName);
-   			}
+			   }
+			selected = d;
+			chart.selectAll("circle").attr("fill", function(thisGuy) {
+				if (thisGuy == selected) {
+					return "green";
+				}
+				return "black";
+			});
    		});
 
    	
@@ -105,20 +115,17 @@ d3.csv("candy.csv", function(csv) {
 	
 
 
-	chart1 // or something else that selects the SVG element in your visualizations
-		.append("g") // create a group node
+	chart.append("g")
 		.attr("transform", "translate(0,"+ (width -50)+ ")")
-		.call(xAxis) // call the axis generator
+		.call(xAxis) 
 		.append("text");
 
-	chart1 // or something else that selects the SVG element in your visualizations
-		.append("g") // create a group node
+	chart.append("g")
 		.attr("transform", "translate(50, 0)")
 		.call(yAxis)
 		.append("text");
 
-	chart1 // or something else that selects the SVG element in your visualizations
-		.append("g") // create a group node
+	chart.append("g")
 		.attr("transform", "translate(0,"+ (width -50)+ ")")
 		.append("text")
 		.attr("x", width-16)
@@ -126,15 +133,14 @@ d3.csv("candy.csv", function(csv) {
 		.style("text-anchor", "end")
 		.text("Age");
 
-	chart1 // or something else that selects the SVG element in your visualizations
-		.append("g") // create a group node
+	chart.append("g")
 		.attr("transform", "translate(50, 0)")
 		.append("text")
 		.attr("transform", "rotate(-90)")
 		.attr("y", 6)
 		.attr("dy", ".71em")
 		.style("text-anchor", "end")
-		.text("People who like it");
+		.text("Total Joys");
 
 	function createEmptyMap() {
 		var data = google.visualization.arrayToDataTable([
