@@ -826,7 +826,673 @@ d3.csv("candy.csv", function(csv) {
 		return totalScore/totalReviews;
 	}
 
-		
+	function getReviewCount(candyName, abbreviation) {
+		var totalScore = 0;
+		var totalReviews = 0;
+		var findRightReviews = csv.filter(function(d) {
+			if (candyName == 'York Peppermint Patties') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_York_Peppermint_Patties;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Twix') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Twix;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Any full sized candy bar") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Any_full_sized_candy_bar;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Butterfinger') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Butterfinger;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Candy Corn') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Candy_Corn;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Chiclets') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Chiclets;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Dots') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Dots;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Fuzzy Peaches') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Fuzzy_Peaches;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Good N Plenty') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Good_N_Plenty;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Gummy Bears straight up') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Gummy_Bears_straight_up;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Healthy Fruit') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Healthy_Fruit;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Heath Bar') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Heath_Bar;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Hershey's Dark Chocolate") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Hershey_s_Dark_Chocolate;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Hershey's Milk Chocolate") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Hershey_s_Milk_Chocolate;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Hershey's Kisses") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Hershey_s_Kisses;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Jolly Rancher Bad Flavor") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Jolly_Rancher_bad_flavor;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Jolly Ranchers Good Flavor') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Jolly_Ranchers_good_flavor;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Junior Mints') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Junior_Mints;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Kit Kat') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Kit_Kat;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			}else if (candyName == 'LaffyTaffy') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_LaffyTaffy;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			}else if (candyName == 'LemonHeads') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_LemonHeads;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			}else if (candyName == 'Licorice Yes Black') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Licorice_yes_black;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			}else if (candyName == 'Licorice Not Black') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Licorice_not_black;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Lollipops') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Lollipops;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Milk Duds') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Milk_Duds;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Milky Way') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Milky_Way;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Regular M Ms') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Regular_M_Ms;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Peanut M M s') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Peanut_M_M_s;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Mint Kisses') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Mint_Kisses;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Mr Goodbar') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Mr_Goodbar;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Nerds') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Nerds;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Nestle Crunch') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Nestle_Crunch;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Peeps') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Peeps;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Pixy_Stix') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Pixy_Stix;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Reese's Peanut Butter Cups") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Reese_s_Peanut_Butter_Cups;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == "Reese's Pieces") {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Reese_s_Pieces;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Rolos') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Rolos;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Skittles') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Skittles;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Snickers') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Snickers;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Sourpatch Kids') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Sourpatch_Kids_i_e_abominations_of_nature;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Starburst') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Starburst;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Swedish Fish') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Swedish_Fish;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Tic Tacs') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Tic_Tacs;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Three_Musketeers') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Three_Musketeers;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Tolberone') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Tolberone_something_or_other;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Trail Mix') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Trail_Mix;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			} else if (candyName == 'Whatchamacallit Bars') {
+				if (d.Q5_STATE.toUpperCase() == abbreviation) {	
+					var reviewValue = d.Q6_Whatchamacallit_Bars;
+					if (reviewValue == 'DESPAIR') {
+						totalReviews++;
+					} else if (reviewValue == 'MEH') {
+						totalReviews++;
+						totalScore += 0.5;
+					} else {
+						totalReviews++;
+						totalScore++;
+					}
+
+				}
+			}
+
+		});
+		return totalReviews;
+	}
 
 
 
@@ -837,57 +1503,57 @@ d3.csv("candy.csv", function(csv) {
 		} else {
 			console.log("candy name: " + candyName);
 			var data = google.visualization.arrayToDataTable([
-		      ['State', 'Popularity'],
-		      ['AL', getAverageScore(candyName, 'AL')],
-		      ['AK', getAverageScore(candyName, 'AK')],
-		      ['AZ', getAverageScore(candyName, 'AZ')],
-		      ['AR', getAverageScore(candyName, 'AR')],
-		      ['CA', getAverageScore(candyName, 'CA')],
-		      ['CO', getAverageScore(candyName, 'CO')],
-		      ['CT', getAverageScore(candyName, 'CT')],
-		      ['DE', getAverageScore(candyName, 'DE')],
-		      ['FL', getAverageScore(candyName, 'FL')],
-		      ['GA', getAverageScore(candyName, 'GA')],
-		      ['HI', getAverageScore(candyName, 'HI')],
-		      ['ID', getAverageScore(candyName, 'ID')],
-		      ['IL', getAverageScore(candyName, 'IL')],
-		      ['IN', getAverageScore(candyName, 'IN')],
-		      ['IA', getAverageScore(candyName, 'IA')],
-		      ['KS', getAverageScore(candyName, 'KS')],
-			  ['KY', getAverageScore(candyName, 'KY')],
-			  ['LA', getAverageScore(candyName, 'LA')],
-			  ['ME', getAverageScore(candyName, 'ME')],
-			  ['MD', getAverageScore(candyName, 'MD')],
-			  ['MA', getAverageScore(candyName, 'MA')],
-			  ['MI', getAverageScore(candyName, 'MI')],
-			  ['MN', getAverageScore(candyName, 'MN')],
-			  ['MS', getAverageScore(candyName, 'MS')],
-			  ['MO', getAverageScore(candyName, 'MO')],
-			  ['MT', getAverageScore(candyName, 'MT')],
-			  ['NE', getAverageScore(candyName, 'NE')],
-			  ['NV', getAverageScore(candyName, 'NV')],
-			  ['NH', getAverageScore(candyName, 'NH')],
-			  ['NJ', getAverageScore(candyName, 'NJ')],
-			  ['NM', getAverageScore(candyName, 'NM')],
-			  ['NY', getAverageScore(candyName, 'NY')],
-			  ['NC', getAverageScore(candyName, 'NC')],
-			  ['ND', getAverageScore(candyName, 'ND')],
-			  ['OH', getAverageScore(candyName, 'OH')],
-			  ['OK', getAverageScore(candyName, 'OK')],
-			  ['OR', getAverageScore(candyName, 'OR')],
-			  ['PA', getAverageScore(candyName, 'PA')],
-			  ['RI', getAverageScore(candyName, 'RI')],
-			  ['SC', getAverageScore(candyName, 'SC')],
-			  ['SD', getAverageScore(candyName, 'SD')],
-			  ['TN', getAverageScore(candyName, 'TN')],
-			  ['TX', getAverageScore(candyName, 'TX')],
-			  ['UT', getAverageScore(candyName, 'UT')],
-			  ['VT', getAverageScore(candyName, 'VT')],
-			  ['VA', getAverageScore(candyName, 'VA')],
-			  ['WA', getAverageScore(candyName, 'WA')],
-			  ['WV', getAverageScore(candyName, 'WV')],
-			  ['WI', getAverageScore(candyName, 'WI')],
-			  ['WY', getAverageScore(candyName, 'WY')]
+		      ['State', 'Popularity', 'Number of Reviews'],
+		      ['AL', getAverageScore(candyName, 'AL'), getReviewCount(candyName, 'AL')],
+		      ['AK', getAverageScore(candyName, 'AK'), getReviewCount(candyName, 'AK')],
+		      ['AZ', getAverageScore(candyName, 'AZ'), getReviewCount(candyName, 'AZ')],
+		      ['AR', getAverageScore(candyName, 'AR'), getReviewCount(candyName, 'AR')],
+		      ['CA', getAverageScore(candyName, 'CA'), getReviewCount(candyName, 'CA')],
+		      ['CO', getAverageScore(candyName, 'CO'), getReviewCount(candyName, 'CO')],
+		      ['CT', getAverageScore(candyName, 'CT'), getReviewCount(candyName, 'CT')],
+		      ['DE', getAverageScore(candyName, 'DE'), getReviewCount(candyName, 'DE')],
+		      ['FL', getAverageScore(candyName, 'FL'), getReviewCount(candyName, 'FL')],
+		      ['GA', getAverageScore(candyName, 'GA'), getReviewCount(candyName, 'GA')],
+		      ['HI', getAverageScore(candyName, 'HI'), getReviewCount(candyName, 'HI')],
+		      ['ID', getAverageScore(candyName, 'ID'), getReviewCount(candyName, 'ID')],
+		      ['IL', getAverageScore(candyName, 'IL'), getReviewCount(candyName, 'IL')],
+		      ['IN', getAverageScore(candyName, 'IN'), getReviewCount(candyName, 'IN')],
+		      ['IA', getAverageScore(candyName, 'IA'), getReviewCount(candyName, 'IA')],
+		      ['KS', getAverageScore(candyName, 'KS'), getReviewCount(candyName, 'KS')],
+			  ['KY', getAverageScore(candyName, 'KY'), getReviewCount(candyName, 'KY')],
+			  ['LA', getAverageScore(candyName, 'LA'), getReviewCount(candyName, 'LA')],
+			  ['ME', getAverageScore(candyName, 'ME'), getReviewCount(candyName, 'ME')],
+			  ['MD', getAverageScore(candyName, 'MD'), getReviewCount(candyName, 'MD')],
+			  ['MA', getAverageScore(candyName, 'MA'), getReviewCount(candyName, 'MA')],
+			  ['MI', getAverageScore(candyName, 'MI'), getReviewCount(candyName, 'MI')],
+			  ['MN', getAverageScore(candyName, 'MN'), getReviewCount(candyName, 'MN')],
+			  ['MS', getAverageScore(candyName, 'MS'), getReviewCount(candyName, 'MS')],
+			  ['MO', getAverageScore(candyName, 'MO'), getReviewCount(candyName, 'MO')],
+			  ['MT', getAverageScore(candyName, 'MT'), getReviewCount(candyName, 'MT')],
+			  ['NE', getAverageScore(candyName, 'NE'), getReviewCount(candyName, 'NE')],
+			  ['NV', getAverageScore(candyName, 'NV'), getReviewCount(candyName, 'NV')],
+			  ['NH', getAverageScore(candyName, 'NH'), getReviewCount(candyName, 'NH')],
+			  ['NJ', getAverageScore(candyName, 'NJ'), getReviewCount(candyName, 'NJ')],
+			  ['NM', getAverageScore(candyName, 'NM'), getReviewCount(candyName, 'NM')],
+			  ['NY', getAverageScore(candyName, 'NY'), getReviewCount(candyName, 'NY')],
+			  ['NC', getAverageScore(candyName, 'NC'), getReviewCount(candyName, 'NC')],
+			  ['ND', getAverageScore(candyName, 'ND'), getReviewCount(candyName, 'ND')],
+			  ['OH', getAverageScore(candyName, 'OH'), getReviewCount(candyName, 'OH')],
+			  ['OK', getAverageScore(candyName, 'OK'), getReviewCount(candyName, 'OK')],
+			  ['OR', getAverageScore(candyName, 'OR'), getReviewCount(candyName, 'OR')],
+			  ['PA', getAverageScore(candyName, 'PA'), getReviewCount(candyName, 'PA')],
+			  ['RI', getAverageScore(candyName, 'RI'), getReviewCount(candyName, 'RI')],
+			  ['SC', getAverageScore(candyName, 'SC'), getReviewCount(candyName, 'SC')],
+			  ['SD', getAverageScore(candyName, 'SD'), getReviewCount(candyName, 'SD')],
+			  ['TN', getAverageScore(candyName, 'TN'), getReviewCount(candyName, 'TN')],
+			  ['TX', getAverageScore(candyName, 'TX'), getReviewCount(candyName, 'TX')],
+			  ['UT', getAverageScore(candyName, 'UT'), getReviewCount(candyName, 'UT')],
+			  ['VT', getAverageScore(candyName, 'VT'), getReviewCount(candyName, 'VT')],
+			  ['VA', getAverageScore(candyName, 'VA'), getReviewCount(candyName, 'VA')],
+			  ['WA', getAverageScore(candyName, 'WA'), getReviewCount(candyName, 'WA')],
+			  ['WV', getAverageScore(candyName, 'WV'), getReviewCount(candyName, 'WV')],
+			  ['WI', getAverageScore(candyName, 'WI'), getReviewCount(candyName, 'WI')],
+			  ['WY', getAverageScore(candyName, 'WY'), getReviewCount(candyName, 'WY')]
 		    ]);
 
 		    var options = {
