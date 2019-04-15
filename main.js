@@ -7,6 +7,8 @@ var height = 500;
 var xScale;
 var yScale;
 
+var chart;
+
 var selected;
 var compData;
 var totalPeople = 0;
@@ -56,7 +58,7 @@ d3.csv("candy.csv", function(csv) {
 	var yAxis = d3.axisLeft().scale(yScale);
 	
 		//   //Create SVGs for charts
-	var chart = d3.select("#scatter")
+	chart = d3.select("#scatter")
         .append("svg:svg")
         .attr("width",width)
 		.attr("height",height);
@@ -1575,5 +1577,23 @@ d3.csv("candy.csv", function(csv) {
 	    
 	}
 
+	
+	
 });
+
+function searchCandy() {
+	var candy = document.getElementById("candySearch").value;
+	chart.selectAll("circle").attr("fill", function(d, i) {
+		if (compData[i][2] == candy) {
+			(document.getElementById("candy").innerHTML = compData[i][2]);
+			(document.getElementById("rating").innerHTML = compData[i][0]);
+			(document.getElementById("age").innerHTML = compData[i][1]/compData[i][0]);
+			return "red";
+		}
+		if (selected == d) {
+			return "green";
+		}
+		return "black";
+	});			
+}
    
