@@ -8,6 +8,7 @@ var xScale;
 var yScale;
 
 var chart;
+var searchingCandy = false;
 
 var selected;
 var compData;
@@ -87,15 +88,17 @@ d3.csv("candy.csv", function(csv) {
 			(document.getElementById("rating").innerHTML = compData[i][0]);
 			(document.getElementById("age").innerHTML = compData[i][1]/compData[i][0]);
 			// selected = d;
-			chart.selectAll("circle").attr("fill", function(thisGuy) {
-				if (thisGuy == selected) {
-					return "green";
-				}
-				if (thisGuy == d) {
-					return "red"
-				}
-				return "black";
-			});
+			if (!searchingCandy) {	
+				chart.selectAll("circle").attr("fill", function(thisGuy) {
+					if (thisGuy == selected) {
+						return "green";
+					}
+					if (thisGuy == d) {
+						return "red"
+					}
+					return "black";
+				});
+			}
    		})
    		.on("click", function(d,i){
    			candyName = compData[i][2];
@@ -104,12 +107,15 @@ d3.csv("candy.csv", function(csv) {
    				createMap(candyName);
 			   }
 			selected = d;
-			chart.selectAll("circle").attr("fill", function(thisGuy) {
-				if (thisGuy == selected) {
-					return "green";
-				}
-				return "black";
-			});
+
+			if (!searchingCandy) {
+				chart.selectAll("circle").attr("fill", function(thisGuy) {
+					if (thisGuy == selected) {
+						return "green";
+					}
+					return "black";
+				});
+			}
    		});
 
    	
@@ -1583,16 +1589,24 @@ d3.csv("candy.csv", function(csv) {
 
 function searchCandy() {
 	var candy = document.getElementById("candySearch").value;
+	candy = candy.toUpperCase();
+	searchingCandy = true;
 	chart.selectAll("circle").attr("fill", function(d, i) {
-		if (compData[i][2] == candy) {
+		if (compData[i][2].toUpperCase().indexOf(candy) > -1) {
 			(document.getElementById("candy").innerHTML = compData[i][2]);
 			(document.getElementById("rating").innerHTML = compData[i][0]);
 			(document.getElementById("age").innerHTML = compData[i][1]/compData[i][0]);
 			return "red";
+		} else {
+			return "white";
 		}
-		if (selected == d) {
-			return "green";
-		}
+	});			
+}
+   
+function clearSearch() {
+	searchingCandy = false;
+	document.getElementById("candySearch").value = '';
+	chart.selectAll("circle").attr("fill", function(d, i) {
 		return "black";
 	});			
 }
